@@ -1,0 +1,99 @@
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+/* 定义自定义字体 'SmileySans'，并提供备用字体序列 */
+@font-face {
+    font-family: 'SmileySans'; /* 自定义字体名称，无需其他字体作为其一部分 */
+    src: url('font/SmileySans-Oblique.otf') format('opentype'), /* OTF 字体文件 */
+         url('font/dyh.ttf.woff2') format('woff2'), /* 更现代、更高效的 WOFF2 格式 */
+         url('font/dyh.ttf') format('truetype'); /* 兼容性广的 TTF 格式 */
+
+    /* 设置字体的权重和风格 */
+    font-weight: normal; /* 正常字体权重 */
+    font-style: oblique; /* 斜体风格 */
+}
+
+a {
+	color: inherit;
+}
+
+body {
+	background-color: rgb(30, 30, 30);
+	color: white;
+	cursor: default;
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+}
+
+header {
+	position: fixed;
+	    width: 100%;
+	background-color: rgba(100, 87, 87, 0.301);
+	padding: 18px 25px;
+	-webkit-user-select: none;
+	user-select: none;
+	font-family: 'SmileySans',sans-serif;
+	display: flex;
+	flex-wrap: nowrap;
+	z-index: 100;
+	top: 0;
+	flex-wrap: nowrap;
+}
+
+h1 {
+	margin: 15px 0;
+}
+
+main {
+	display: block;
+	margin: 15px;
+}
+
+.bg-img {
+	background-attachment: fixed;
+	background-image: url(https://cn.bing.com/th?id=OHR.InukshukLights_ZH-CN0756858983_1920x1080.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-filter: blur(10px);
+	filter: blur(10px);
+	height: 100%;
+	left: 0;
+	opacity: .5;
+	position: fixed;
+	top: 0;
+	transform: scale(1.1);
+	width: 100%;
+	z-index: -1;
+}
+
+.see_you_again{
+	height: calc(60vh - 0px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes jump {
+	0%, 100% {transform: translateY(0);}
+	50% {transform: translateY(-25px);}
+  }
+
+.xx{
+	animation: jump 1s ease-in-out infinite;
+	font-family: 'SmileySans',sans-serif;
+	position: absolute; /* 文字绝对定位 */
+	bottom: 15px; /* 文字定位到div底部 */
+}
+
+.v1{
+	margin: 2.96592653575cm auto;
+}
+
+.v2{
+	margin: 75px auto;
+}
