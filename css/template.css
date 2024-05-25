@@ -5,14 +5,17 @@
 
 /* 定义自定义字体 'SmileySans'，并提供备用字体序列 */
 @font-face {
-    font-family: 'SmileySans'; /* 自定义字体名称，无需其他字体作为其一部分 */
-    src: url('font/SmileySans-Oblique.otf') format('opentype'), /* OTF 字体文件 */
-         url('font/dyh.ttf.woff2') format('woff2'), /* 更现代、更高效的 WOFF2 格式 */
-         url('font/dyh.ttf') format('truetype'); /* 兼容性广的 TTF 格式 */
+    font-family: 'SmileySans';
+    src: url('/font/SmileySans-Oblique.otf') format('opentype'),
+         url('/font/SmileySans-Oblique') format('woff2'),
+         url('/font/SmileySans-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: oblique;
+}
 
-    /* 设置字体的权重和风格 */
-    font-weight: normal; /* 正常字体权重 */
-    font-style: oblique; /* 斜体风格 */
+/* 使用字体的示例 */
+.someClass {
+    font-family: 'SmileySans', 'Arial', 'Helvetica', 'Verdana', sans-serif;
 }
 
 a {
@@ -26,26 +29,25 @@ body {
 	font-family: Helvetica, sans-serif;
 	font-size: 16px;
 	margin: 0;
-	-webkit-tap-highlight-color: transparent;
 }
 
 header {
 	position: fixed;
-	    width: 100%;
+	width: 100%;
 	background-color: rgba(100, 87, 87, 0.301);
-	padding: 18px 25px;
-	-webkit-user-select: none;
+	padding: 20px 30px;
 	user-select: none;
 	font-family: 'SmileySans',sans-serif;
 	display: flex;
 	flex-wrap: nowrap;
 	z-index: 100;
 	top: 0;
-	flex-wrap: nowrap;
+	font-size: 150%;
 }
 
 h1 {
 	margin: 15px 0;
+	font-family: 'SmileySans',sans-serif;
 }
 
 main {
@@ -55,7 +57,7 @@ main {
 
 .bg-img {
 	background-attachment: fixed;
-	background-image: url(https://cn.bing.com/th?id=OHR.InukshukLights_ZH-CN0756858983_1920x1080.jpg);
+	background-image: url(https://bing.shangzhenyang.com/api/1080p);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -96,4 +98,111 @@ main {
 
 .v2{
 	margin: 75px auto;
+}
+
+a:link{
+    color: #66CCFF;
+}
+
+a:visited{
+    color: #66CCFF;
+}
+
+a:hover{
+    color: #66CCFF;
+}
+
+.footer{
+    background-color: #16171b;
+    bottom: 0;
+    color: rgb(255, 255, 255);
+    font-size:50%;
+    padding: 10px;
+    text-align: center;
+    /* 页脚样式 */
+    width: 100%;
+    padding: 20px 0;
+	font-size: 15px;
+}
+
+/* 对于手机设备，假设最大宽度为480px */
+@media (max-width: 480px) {
+	.xx{
+		font-size: 40px;
+	}
+	header {
+		padding: 18px 16px;
+		font-size: 130%;
+	}
+	h1 {
+		margin: 10px 0;
+		font-size: 18px;
+	}
+	.main-content {
+		padding: 5px;
+	}
+	.footer{
+		font-size: 18px;
+	}
+}
+
+/* 平板设备，这里以768px作为分界点 */
+@media (min-width: 481px) and (max-width: 1024px) {
+	.xx{
+		font-size: 100px;
+	}
+	header {
+		padding: 18px 18.618px;
+		font-size: 150%;
+	}
+	h1 {
+		margin: 12px 0;
+		font-size: 24px;
+	}
+	.main-content {
+		padding: 10px;
+	}
+	.footer{
+		font-size: 22px;
+	}
+}
+
+/* 电脑显示器，例如宽度超过1200px */
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+		margin: 0 auto;
+	}
+	.xx{
+		font-size: 50px;
+	}
+	header {
+		padding: 25px 25px;
+	}
+	h1 {
+		font-size: 32px;
+	}
+	.footer{
+		font-size: 20px;
+	}
+}
+
+/* 高分辨率显示器，例如宽度超过2400px */
+@media (min-width: 2400px) {
+	.container {
+		max-width: 1540px;
+		margin: 0 auto;
+	}
+	.xx{
+		font-size: 100px;
+	}
+	header {
+		padding: 45px 75px;
+	}
+	h1 {
+		font-size: 58px;
+	}
+	.footer{
+		font-size: 45px;
+	}
 }
