@@ -45,9 +45,10 @@ header {
 	font-size: 150%;
 }
 
-h1 {
-	margin: 15px 0;
-	font-family: 'SmileySans',sans-serif;
+header .esc {
+	position: absolute;
+	top: 20px; /* 根据需要调整 */
+	right: 20px; /* 靠右对齐 */
 }
 
 main {
@@ -94,6 +95,7 @@ main {
 
 .v1{
 	margin: 2.96592653575cm auto;
+	font-family: 'SmileySans',sans-serif;
 }
 
 .v2{
@@ -123,6 +125,11 @@ a:hover{
     width: 100%;
     padding: 20px 0;
 	font-size: 15px;
+}
+
+.mpng {
+    width: 260px;
+    height: 260px;
 }
 
 /* 对于手机设备，假设最大宽度为480px */
