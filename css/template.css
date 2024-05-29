@@ -132,6 +132,16 @@ a:hover{
     height: 260px;
 }
 
+.author-item {
+    min-height: 136px;
+}
+li {
+    list-style: none;
+}
+li, ol, ul {
+    padding: 0;
+}
+
 /* 对于手机设备，假设最大宽度为480px */
 @media (max-width: 480px) {
 	.xx{
