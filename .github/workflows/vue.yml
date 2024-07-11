@@ -28,7 +28,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.6
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}  # GitHub Personal Access Token，需要在仓库的 Secrets 中设置
-          BRANCH: gh-pages  # 部署到 gh-pages 分支
+          BRANCH: vueout  # 部署到分支
           FOLDER: dist  # 静态文件的路径，例如 Vue.js 应用构建后的 dist 目录
           CLEAN: true  # 清理旧的部署文件
 
