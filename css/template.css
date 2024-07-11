@@ -54,6 +54,7 @@ header .esc {
 main {
 	display: block;
 	margin: 15px;
+	text-align: center;
 }
 
 .bg-img {
