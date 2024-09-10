@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教师节快乐</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease-in-out;
+  }
+  .card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    text-align: center;
+    transform: scale(0.8);
+    transition: all 0.5s ease-in-out;
+    width: 400px;
+  }
+  h1 {
+    color: #333;
+    margin: 0;
+  }
+  p {
+    color: #666;
+    font-size: 19px;
+    border-bottom: 1px dashed #c9a878; /* 金色虚线 */
+    padding-bottom: 10px;
+  }
+  button {
+    width: 60px;
+    height: 60px;
+    background-color: #f4f4f9;
+    border: 2px solid #c9a878; /* 金色边框 */
+    color: #333;
+    border-radius: 10px; /* 初始圆角 */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+  }
+  .visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .active {
+    background-color: #c9a878; /* 金色 */
+    color: #fff;
+    border: none;
+    border-radius: 0; /* 正方形 */
+    display: none; /* 隐藏按钮 */
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="card" v-bind:class="{ visible: showMessage }">
+    <br>
+    <h1>教师节快乐！</h1>
+    <br>
+    <p v-if="!showMessage">点击按钮查看祝福</p>
+    <br>
+    <p v-if="showMessage" class="message">{{ message }}</p>
+    <p v-if="showMessage">{{ content }}</p>
+    <button @click="toggleMessage" v-bind:class="{ active: showMessage }">查看祝福</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> 
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      showMessage: false,
+      message: '',
+      content: '',
+      messages: [
+        "祝您身体健康！",
+        "祝您工作顺利！",
+        "祝您桃李满天下！",
+        "祝您青春常在！",
+        "祝您桃李满园！",
+        "祝您平安幸福！",
+        "祝您健康快乐！",
+        "祝您事事如意！",
+        "祝您心想事成！",
+        "祝您美梦成真！",
+        "祝您万事如意！",
+        "祝您锦绣前程！",
+        "祝您鹏程万里！",
+        "祝您事事顺利！",
+        "祝您合家欢乐！",
+        "祝您春风得意！",
+        "祝您前程似锦！",
+        "祝您大展鹏图！",
+        "祝您马到功成！",
+        "祝您事业有成！",
+        "祝您天天开心！",
+        "祝您快乐永远！",
+        "祝您身体健康！"
+      ],
+      contents: [
+        "感谢您的辛勤付出，祝您节日快乐，身体健康，工作顺利！",
+        "您的教诲如同星辰，照亮我们前行的道路。"
+      ]
+    },
+    methods: {
+      toggleMessage() {
+        this.showMessage = !this.showMessage;
+        if (this.showMessage) {
+          this.openEnvelope();
+        }
+      },
+      openEnvelope() {
+        const randomMessageIndex = Math.floor(Math.random() * this.messages.length);
+        this.message = this.messages[randomMessageIndex];
+        this.content = this.contents[Math.floor(Math.random() * this.contents.length)];
+      }
+    },
+    mounted() {
+      // 可以在此处添加页面加载时的动画效果
+    }
+  });
+</script>
+</body>
+</html>
